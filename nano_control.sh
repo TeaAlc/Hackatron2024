@@ -2,11 +2,12 @@
 
 export NANOLEAFS_IP="192.168.82.125"
 
-time=$(date +%s)
-if [ $(( ITER % 3 )) -eq 1 ]; then
+ts=$(date +%s)
+echo "TIME: $ts"
+if [ $(( ts % 3 )) -eq 1 ]; then
  echo "green"
  curl -s --location --request PUT "http://$NANOLEAFS_IP:16021/api/v1/$AUTH_TOKEN/state" --data "{\"hue\" : {\"value\":120}}"
-elif [ $(( ITER % 3 )) -eq 2 ]; then
+elif [ $(( ts % 3 )) -eq 2 ]; then
  echo "yellow"
  curl -s --location --request PUT "http://$NANOLEAFS_IP:16021/api/v1/$AUTH_TOKEN/state" --data "{\"hue\" : {\"value\":39}}"
 else
