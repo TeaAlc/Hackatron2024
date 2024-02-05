@@ -2,7 +2,7 @@
 
 export NANOLEAFS_IP="192.168.82.125"
 
-if [ -z "${ITER}" ]; then
+if [ "$ITER" == "" ]; then
  export ITER=1
  echo "SET ITER: $ITER"
 fi
