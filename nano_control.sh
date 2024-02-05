@@ -8,6 +8,8 @@ fi
 
 export ITER=$((ITER+1))
 
+echo "ITER: $ITER"
+
 if [ $(( ITER % 3 )) -eq 1 ]; then
  echo "green"
  curl --location --request PUT "http://$NANOLEAFS_IP:16021/api/v1/$AUTH_TOKEN/state" --data "{\"hue\" : {\"value\":120}}"
