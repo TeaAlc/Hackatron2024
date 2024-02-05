@@ -6,7 +6,7 @@ if [ -z "${ITER}" ]; then
  export ITER=1
 fi
 
-export ITER=(($ITER+1))
+export ITER=(( $ITER + 1 ))
 
 if (( $ITER % 3 == 1 )); then
  echo "green"
